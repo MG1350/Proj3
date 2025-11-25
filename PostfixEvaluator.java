@@ -26,6 +26,15 @@ public class PostfixEvaluator {
 
     /**
      * Constructs a postfix evaluator using the given stack for operands.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * StackADT stack = new LinkedListBasedStack();
+     * PostfixEvaluator eval = new PostfixEvaluator(stack);
+     * }</pre>
      *
      * @param stack an implementation of {@code StackADT} to store operands
      */
@@ -38,6 +47,15 @@ public class PostfixEvaluator {
      * <p>
      * The expression must be valid and tokens must be separated by spaces.
      * </p>
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * PostfixEvaluator eval = new PostfixEvaluator(new ArrayBasedStack());
+     * int value = eval.evaluate("10 2 6 * +"); // returns 22
+     * }</pre>
      *
      * @param postfix the postfix expression to evaluate
      * @return the integer value resulting from evaluating the expression
@@ -65,6 +83,15 @@ public class PostfixEvaluator {
     /**
      * Returns {@code true} if the token is a number (operand).
      * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * isNumber("5"); // true
+     * isNumber("+"); // false
+     * }</pre>
+     * 
      * @param s the token that is checked to be an operand
      */
     private boolean isNumber(String s) {
@@ -74,6 +101,15 @@ public class PostfixEvaluator {
     /**
      * Returns {@code true} if the token is an operator (+ - * /).
      * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * isOperator("*"); // true
+     * isOperator("12"); // false
+     * }</pre>
+     * 
      * @param s the token that is checked to be an operator
      */
     private boolean isOperator(String s) {
@@ -82,9 +118,18 @@ public class PostfixEvaluator {
 
     /**
      * Applies the given operator to two integer operands.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * apply(3, 4, "*"); // returns 12
+     * apply(8, 2, "-"); // returns 6
+     * }</pre>
      *
-     * @param a the first operand (left-hand side)
-     * @param b the second operand (right-hand side)
+     * @param a  the first operand (left-hand side)
+     * @param b  the second operand (right-hand side)
      * @param op the operator to apply, one of (+ - * /)
      * @return the result of applying the operator to the operands
      */

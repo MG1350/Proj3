@@ -28,6 +28,15 @@ public class InfixConverter {
 
     /**
      * Constructs the converter using the given stack for operators.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * StackADT stack = new ArrayBasedStack();
+     * InfixConverter converter = new InfixConverter(stack);
+     * }</pre>
      *
      * @param stack an implementation of {@code StackADT} to store operators
      */
@@ -38,6 +47,15 @@ public class InfixConverter {
     /**
      * Converts an infix expression (tokens separated by spaces) into postfix
      * notation.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * String post = converter.toPostfix("10 * ( 2 + 3 )");
+     * // post is "10 2 3 + *"
+     * }</pre>
      *
      * @param infix the infix expression to convert
      * @return the converted postfix expression
@@ -86,6 +104,15 @@ public class InfixConverter {
     /**
      * Returns {@code true} if the token is a number (operand).
      * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * isNumber("12"); // true
+     * isNumber("+"); // false
+     * }</pre>
+     * 
      * @param s the token that is checked to be an operand
      */
     private boolean isNumber(String s) {
@@ -94,6 +121,15 @@ public class InfixConverter {
 
     /**
      * Returns {@code true} if the token is an operator (+ - * /).
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * isOperator("*"); // true
+     * isOperator("8"); // false
+     * }</pre>
      * 
      * @param s the token that is checked to be an operator
      */
@@ -104,6 +140,15 @@ public class InfixConverter {
     /**
      * Used to check the operator precedence
      * Operator precedence: * and / = 2, + and - = 1.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * precedence("*"); // 2
+     * precedence("+"); // 1
+     * }</pre>
      * 
      * @param op the operator that is checked for precedence
      */

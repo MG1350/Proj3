@@ -3,6 +3,19 @@ import java.util.EmptyStackException;
 /**
  * Array based implementation of StackADT.
  * Uses dynamic resizing when array becomes full.
+ * 
+ * <p>
+ * Example:
+ * </p>
+ * 
+ * <pre>{@code
+ * StackADT stack = new ArrayBasedStack();
+ * stack.push("A");
+ * stack.push("B");
+ * System.out.println(stack.pop()); // prints "B"
+ * System.out.println(stack.peek()); // prints "A"
+ * }</pre>
+ * 
  * @author Maverick Guinto
  * @version 1.0
  */
@@ -22,6 +35,15 @@ public class ArrayBasedStack implements StackADT {
 
     /**
      * Constructs a new empty stack with a starting capacity of 10.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * StackADT stack = new ArrayBasedStack();
+     * System.out.println(stack.isEmpty()); // true
+     * }</pre>
      */
     public ArrayBasedStack() {
         data = new String[10];
@@ -31,6 +53,16 @@ public class ArrayBasedStack implements StackADT {
     /**
      * Adds an element to the top of the stack.
      * If the array is full, the array is resized to double its current capacity.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * StackADT stack = new ArrayBasedStack();
+     * stack.push("hello");
+     * stack.push("world");
+     * }</pre>
      * 
      * @param item the string value to push onto the stack
      */
@@ -48,6 +80,17 @@ public class ArrayBasedStack implements StackADT {
 
     /**
      * Removes and returns the top element of the stack.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * StackADT stack = new ArrayBasedStack();
+     * stack.push("A");
+     * stack.push("B");
+     * String popped = stack.pop(); // "B"
+     * }</pre>
      * 
      * @return the string at the top of the stack
      * @throws java.util.EmptyStackException if the stack is empty
@@ -67,6 +110,16 @@ public class ArrayBasedStack implements StackADT {
     /**
      * Returns, but does not remove, the top element of the stack.
      * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * StackADT stack = new ArrayBasedStack();
+     * stack.push("X");
+     * String top = stack.peek(); // "X"
+     * }</pre>
+     * 
      * @return the string at the top of the stack
      * @throws java.util.EmptyStackException if the stack is empty
      */
@@ -81,6 +134,17 @@ public class ArrayBasedStack implements StackADT {
 
     /**
      * Returns whether the stack contains no elements.
+     * 
+     * <p>
+     * Example:
+     * </p>
+     * 
+     * <pre>{@code
+     * StackADT stack = new ArrayBasedStack();
+     * boolean empty = stack.isEmpty(); // true
+     * stack.push("A");
+     * empty = stack.isEmpty(); // false
+     * }</pre>
      * 
      * @return {@code true} if stack has no elements
      */
